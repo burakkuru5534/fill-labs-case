@@ -1,5 +1,7 @@
 package funcs
 
+import "fmt"
+
 //case 1
 
 func SortBunchOfWordsByTheNumberOfCharacterA(words []string) []string {
@@ -66,22 +68,26 @@ func findNumberOfAInString(word string) int {
 //Input: 9
 //Output: 2 4 9
 
-// c(1) = 2
-// c(2) = 4
-// c(3) = 9
-// c(4) = 16
-// c(5) = 25
-// c(6) = 36
-// c(7) = 49
+// the algorithm: f(x) = x! + x
 
-func C(n int) int {
+func MyBrilliantFunction(n int) {
 
-	if n == 1 {
-
-		return 2
+	for i := 1; i < n; i++ {
+		resp := factorial(i)
+		if resp > n {
+			return
+		}
+		fmt.Println(resp + i)
 	}
+}
 
-	return n*n + C(n-1)
+func factorial(n int) int {
+
+	if n == 0 {
+		return 1
+	}
+	return n * factorial(n-1)
+
 }
 
 //case 3

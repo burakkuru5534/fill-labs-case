@@ -18,6 +18,5 @@ func main() {
 
 	fmt.Printf("%v\n", mostRepeated)
 
-	output := funcs.C(9)
-	fmt.Printf("%v\n", output)
+	funcs.MyBrilliantFunction(9)
 }
