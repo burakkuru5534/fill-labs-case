@@ -99,6 +99,8 @@ func factorial(n int) int {
 func FindMostRepeatedDataInArray(array []string) string {
 
 	var mostRepeated string
+	var count int
+	var index int
 
 	for i := range array {
 
@@ -106,9 +108,17 @@ func FindMostRepeatedDataInArray(array []string) string {
 
 			if array[i] == array[j] {
 
-				mostRepeated = array[i]
+				count++
 			}
 		}
+
+		if count > index {
+
+			index = count
+			mostRepeated = array[i]
+		}
+
+		count = 0
 	}
 
 	return mostRepeated
